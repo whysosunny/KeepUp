@@ -1,0 +1,33 @@
+<div class="container">
+    <!--<div ng-if="isAuthenticated() && currentUser.username">-->
+        <!--<div class="row">-->
+            <!--<div ng-repeat="photo in photos" class="col-lg-2 col-sm-3 col-xs-4">-->
+                <!--<a href="#/photo/{{photo.id}}">-->
+                    <!--<img ng-src="{{photo.images.standard_resolution.url}}" class="thumbnail img-responsive" alt="">-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <div ng-if="!currentUser">
+        <div class="jumbotron">
+            <h2>KeepUp</h2>
+            <p>KeepUp is all about keeping in touch with your tight-knit group, planning group events and sharing memories. C'mon give it a shot!</p>
+            <p>
+                <a href="#/login" class="btn btn-lg btn-success">Log in</a>
+                <a href="#/signup" class="btn btn-lg btn-primary">Signup</a>
+            </p>
+        </div>
+    </div>
+
+    <!--<div ng-if="isAuthenticated() && !currentUser.username" class="center-form panel">-->
+        <!--<div class="panel-body">-->
+            <!--<h5 class="text-center">Link Account</h5>-->
+            <!--<p>To complete the registration process you must link your Instagram account.</p>-->
+            <!--<button class="btn btn-block btn-instagram" ng-click="linkInstagram()">-->
+                <!--Sign in with Instagram-->
+            <!--</button>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>

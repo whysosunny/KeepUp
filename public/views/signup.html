@@ -1,0 +1,26 @@
+<h3 class="text-center">Glad you're joining us! Please enter your details:</h3>
+<div class="container entry-form-block">
+    <form>
+        <fieldset class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" ng-model="firstName">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" ng-model="lastName">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" ng-model="username">
+        </fieldset>
+        <fieldset class="form-group" >
+            <label>Password</label>
+            <input type="password" class="form-control" ng-model="password">
+        </fieldset>
+        <fieldset class="form-group" >
+            <label>Re-enter Password</label>
+            <input type="password" class="form-control" ng-model="repeatPassword">
+        </fieldset>
+        <button class="btn btn-primary" ng-click="signup(firstName,lastName,username,password,repeatPassword)">Sign Up</button>
+    </form>
+</div>

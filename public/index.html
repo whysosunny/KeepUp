@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="keepUp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keep Up</title>
+    <link rel="stylesheet" href="libs/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+<body ng-controller="AppCtrl">
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="nav navbar-nav">
+            <a href="/" class="navbar-brand"><i class="glyphicon glyphicon-bookmark"></i><strong>KeepUp</strong></a>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/login" ng-hide="currentUser">Log in</a></li>
+            <li><a href="#/signup" ng-hide="currentUser">Sign up</a></li>
+            <li class="disabled"><a href="#/addEvent" ng-if="currentUser">My Groups</a></li>
+            <li class="disabled"><a href="#/addEvent" ng-if="currentUser">Add Event</a></li>
+            <li class="disabled"><a href="#/addEvent" ng-if="currentUser">Create Group</a></li>
+
+
+            <!--<li><a href="#" ng-click="logout()">Logout</a></li>-->
+        </div>
+
+        <div class="nav navbar-nav navbar-right">
+            <li><a href="#" ng-if="currentUser"><strong>{{ currentUser.firstName}} {{currentUser.lastName}}</strong></a></li>
+            <li><a href="#/" ng-if="currentUser" ng-click="logout()">Logout</a></li>
+        </div>
+    </div>
+</div>
+
+<div ng-view></div>
+
+<script src="libs/angular.js"></script>
+<script src="libs/angular-route.js"></script>
+<script src="libs/angular-messages.js"></script>
+<script src="assets/scripts.js"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+</body>
+</html>
