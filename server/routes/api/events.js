@@ -6,6 +6,7 @@ var User = require('../../models/user');
 var Event = require('../../models/event');
 
 router.post('/', function(req,res,next) {
+    console.log(req.auth);
     var event = new Event({
         title: req.body.title,
         description: req.body.description,

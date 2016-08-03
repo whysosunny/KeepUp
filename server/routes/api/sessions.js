@@ -21,7 +21,8 @@ router.post('/', function(req,res,next) {
                     res.sendStatus(401);
                 } else {
                     var token = jwt.encode({
-                        username: user.username
+                        username: user.username,
+                        _id: user._id
                     }, config.secret);
                     res.send(token);
                 }
