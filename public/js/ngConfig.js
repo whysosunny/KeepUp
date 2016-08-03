@@ -12,7 +12,7 @@ angular.module('keepUp').config(function($routeProvider) {
             templateUrl: './views/signup.html',
             controller: 'SignupCtrl'
         })
-        .when('/addPost', {
+        .when('/addEvent', {
             templateUrl: './views/addEvent.html',
             controller: 'EventsCtrl'
         })

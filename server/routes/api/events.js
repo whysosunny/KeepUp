@@ -10,8 +10,7 @@ router.post('/', function(req,res,next) {
         title: req.body.title,
         description: req.body.description,
         location: req.body.location,
-        date: req.body.date,
-        time: req.body.time,
+        dateTime: req.body.dateTime,
         creator: req.auth._id
     });
 
@@ -26,7 +25,6 @@ router.post('/', function(req,res,next) {
             });
             res.send(event);
         }
-
     });
 
 });

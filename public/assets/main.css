@@ -10,3 +10,6 @@ body {
   min-height: 100vh;
   background: #fff;
 }
+.event-form {
+  width: 60%;
+}
