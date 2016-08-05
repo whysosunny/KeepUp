@@ -10,4 +10,8 @@ angular.module('keepUp').service('EventSvc', function($http) {
         });
     };
     
+    svc.getEvents = function() {
+        return $http.get('/api/events')
+    }
+    
 });

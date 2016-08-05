@@ -5,14 +5,24 @@ var config = require('../../../config');
 var User = require('../../models/user');
 var Event = require('../../models/event');
 
+router.get('/', function(req,res,next) {
+    Event.find({}).populate('creator').exec(function(err,events) {
+        if(err) {
+            console.log(err);
+            next(err);
+        }
+        res.send(events);
+    });
+});
+
 router.post('/', function(req,res,next) {
-    console.log(req.auth);
     var event = new Event({
         title: req.body.title,
         description: req.body.description,
         location: req.body.location,
         dateTime: req.body.dateTime,
-        creator: req.auth._id
+        creator: req.auth._id,
+        going: [req.auth._id]
     });
 
     event.save(function(err,event) {

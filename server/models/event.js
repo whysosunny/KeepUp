@@ -29,5 +29,3 @@ var eventSchema = db.Schema({
 });
 
 module.exports = db.model('Event', eventSchema);
-
-//579618d3a84ff91870c53087

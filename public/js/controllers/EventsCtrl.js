@@ -7,4 +7,6 @@ angular.module('keepUp').controller('EventsCtrl', function($scope, EventSvc) {
                 console.log(error);
             });
     };
+
+    
 });

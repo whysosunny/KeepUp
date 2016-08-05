@@ -15,19 +15,49 @@
             <h2>KeepUp</h2>
             <p>KeepUp is all about keeping in touch with your tight-knit group, planning group events and sharing memories. C'mon give it a shot!</p>
             <p>
-                <a href="#/login" class="btn btn-lg btn-success">Log in</a>
-                <a href="#/signup" class="btn btn-lg btn-primary">Signup</a>
+                <a href="#/login" class="btn btn-success">Log in</a>
+                <a href="#/signup" class="btn btn-primary">Signup</a>
             </p>
         </div>
     </div>
 
-    <!--<div ng-if="isAuthenticated() && !currentUser.username" class="center-form panel">-->
-        <!--<div class="panel-body">-->
-            <!--<h5 class="text-center">Link Account</h5>-->
-            <!--<p>To complete the registration process you must link your Instagram account.</p>-->
-            <!--<button class="btn btn-block btn-instagram" ng-click="linkInstagram()">-->
-                <!--Sign in with Instagram-->
-            <!--</button>-->
-        <!--</div>-->
-    <!--</div>-->
+    <div class="timeline" ng-if="currentUser">
+
+        <div class="event-block" ng-repeat="event in events">
+            <div class="event-info">
+                <div class="event-creation">
+                    <strong>Sunny Bharadwaj</strong> - Created <strong>Friday, June 11th, 2016</strong>
+                </div>
+
+                <div class="event-title">
+                    <strong>Agam Concert!</strong>
+                </div>
+
+                <div class="event-location">
+                    <a href="#/">Hard Rock Cafe, Banjara Hills, Hyderabad</a>
+                </div>
+            </div>
+            <div class="event-date">
+                <div class="date">
+                    08/03
+                </div>
+                <div class="day">
+                    Wednesday
+                </div>
+                <div class="time">
+                    8:00 PM
+                </div>
+            </div>
+
+            <div class="event-description">
+                <p>AGAM IS HERE!! And it’s open bar night after 11. LET’S ROCK ON AND DRINK TILL WE DROP! </p>
+            </div>
+            <div class="event-buttons">
+                <a href="#" class="event-btn">Go</a>
+                <a href="#" class="event-btn">Interested</a>
+                <a href="#" class="event-btn">Not Interested</a>
+            </div>
+        </div>
+    </div>
+
 </div>

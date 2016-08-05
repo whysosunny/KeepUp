@@ -1,8 +1,8 @@
 angular.module('keepUp').config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: './views/home.html'
-            // controller: 'HomeCtrl'
+            templateUrl: './views/home.html',
+            controller: 'HomeCtrl'
         })
         .when('/login', {
             templateUrl: './views/login.html',

@@ -5,6 +5,7 @@
 }
 html {
   background: #e4e4e4;
+  font-family: Avenir, sans-serif;
 }
 body {
   min-height: 100vh;
@@ -12,4 +13,65 @@ body {
 }
 .event-form {
   width: 60%;
+}
+.event-block {
+  margin: 0 auto;
+  height: 250px;
+  width: 750px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.event-block .event-info {
+  height: 121px;
+  width: 600px;
+  float: left;
+}
+.event-block .event-date {
+  height: 121px;
+  width: 150px;
+  float: right;
+  background: #f5f5f5;
+}
+.event-block .event-creation {
+  font-size: 16px;
+  padding: 10px 10px 0 10px;
+}
+.event-block .event-title {
+  font-size: 40px;
+  padding: 0 10px;
+}
+.event-block .event-location {
+  font-size: 16px;
+  padding: 0 10px 10px 10px;
+}
+.event-block .event-date {
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+.event-block .event-date .date {
+  font-size: 40px;
+}
+.event-block .event-date .day {
+  font-size: 16px;
+}
+.event-block .event-date .time {
+  font-size: 16px;
+}
+.event-block .event-description {
+  padding: 10px;
+  font-size: 18px;
+}
+.event-block .event-buttons {
+  height: 59px;
+}
+.event-block .event-buttons a.event-btn {
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  font-size: 18px;
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 16px;
+  background: #f5f5f5;
 }
