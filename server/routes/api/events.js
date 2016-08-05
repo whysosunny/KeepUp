@@ -4,13 +4,15 @@ var bcrypt = require('bcrypt');
 var config = require('../../../config');
 var User = require('../../models/user');
 var Event = require('../../models/event');
+var moment = require('moment');
 
 router.get('/', function(req,res,next) {
-    Event.find({}).populate('creator').exec(function(err,events) {
+    Event.find({}).sort('-created').populate('creator', 'firstName lastName username').exec(function(err,events) {
         if(err) {
             console.log(err);
             next(err);
         }
+
         res.send(events);
     });
 });
@@ -22,7 +24,8 @@ router.post('/', function(req,res,next) {
         location: req.body.location,
         dateTime: req.body.dateTime,
         creator: req.auth._id,
-        going: [req.auth._id]
+        going: [req.auth._id],
+        created: req.body.created
     });
 
     event.save(function(err,event) {

@@ -4,8 +4,7 @@ var eventSchema = db.Schema({
     title: String,
     description: String,
     location: String,
-    date: String,
-    time: String,
+    dateTime: String,
     created: {
         type: Date,
         default: Date.now()

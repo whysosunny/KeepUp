@@ -20,6 +20,7 @@ app.use('/api/sessions', require('./server/routes/api/sessions'));
 app.use('/api/users', require('./server/routes/api/users.js'));
 app.use('/api/events', require('./server/routes/api/events.js'));
 
+
 app.listen(3000, function() {
     console.log("Server up and running at 3000");
 });

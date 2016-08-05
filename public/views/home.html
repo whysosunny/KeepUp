@@ -26,31 +26,31 @@
         <div class="event-block" ng-repeat="event in events">
             <div class="event-info">
                 <div class="event-creation">
-                    <strong>Sunny Bharadwaj</strong> - Created <strong>Friday, June 11th, 2016</strong>
+                    <strong>{{event.creator.firstName}} {{event.creator.lastName}}</strong> - Created <strong>{{event.created}}</strong>
                 </div>
 
                 <div class="event-title">
-                    <strong>Agam Concert!</strong>
+                    <strong>{{event.title}}</strong>
                 </div>
 
                 <div class="event-location">
-                    <a href="#/">Hard Rock Cafe, Banjara Hills, Hyderabad</a>
+                    <a href="#/">{{event.location}}</a>
                 </div>
             </div>
             <div class="event-date">
                 <div class="date">
-                    08/03
+                    {{event.date}}
                 </div>
                 <div class="day">
-                    Wednesday
+                    {{event.day}}
                 </div>
                 <div class="time">
-                    8:00 PM
+                    {{event.time}}
                 </div>
             </div>
 
             <div class="event-description">
-                <p>AGAM IS HERE!! And it’s open bar night after 11. LET’S ROCK ON AND DRINK TILL WE DROP! </p>
+                <p>{{event.description}}</p>
             </div>
             <div class="event-buttons">
                 <a href="#" class="event-btn">Go</a>

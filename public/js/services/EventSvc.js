@@ -6,7 +6,8 @@ angular.module('keepUp').service('EventSvc', function($http) {
             title: evt.title,
             description: evt.description,
             location: evt.location,
-            dateTime: evt.dateTime
+            dateTime: evt.dateTime,
+            created: Date.now()
         });
     };
     
