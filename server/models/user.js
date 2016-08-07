@@ -25,11 +25,11 @@ var userSchema = db.Schema({
 });
 
 userSchema.methods.generateHash = function(password) {
-    bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
 userSchema.methods.validPassword = function(password) {
-    bcrypt.compareSync(password, this.password);
+    return bcrypt.compareSync(password, this.password);
 };
 
 module.exports = db.model('User',userSchema);

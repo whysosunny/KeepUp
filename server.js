@@ -12,7 +12,7 @@ var morgan = require('morgan');
 
 require('./db');
 
-// require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -36,6 +36,14 @@ app.use('/api/signup', require('./server/routes/api/signup'));
 app.use('/api/sessions', require('./server/routes/api/sessions'));
 app.use('/api/users', require('./server/routes/api/users.js'));
 app.use('/api/events', require('./server/routes/api/events.js'));
+
+app.get('/success', function(req,res) {
+    res.json(req.user);
+});
+
+app.get('/failure', function(req,res) {
+    res.send("Failure!");
+});
 
 app.listen(3000, function() {
     console.log("Server up and running at 3000");
