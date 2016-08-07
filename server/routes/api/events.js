@@ -23,8 +23,8 @@ router.post('/', function(req,res,next) {
         description: req.body.description,
         location: req.body.location,
         dateTime: req.body.dateTime,
-        creator: req.auth._id,
-        going: [req.auth._id],
+        creator: req.user._id,
+        going: [req.user._id],
         created: req.body.created
     });
 
@@ -32,7 +32,7 @@ router.post('/', function(req,res,next) {
         if(err) {
             next(err);
         } else {
-            User.update({ _id: req.auth._id }, { $push: { events: event._id } }, function(err) {
+            User.update({ _id: req.user_id }, { $push: { events: event._id } }, function(err) {
                 if(err) {
                     console.log(err);
                 }

@@ -3,20 +3,20 @@ angular.module('keepUp').service('LoginSvc', function($http) {
     svc.getUser = function() {
         return $http.get('/api/users');
     };
+
     svc.login = function(username,password) {
-        return $http.post('/api/sessions', {
+        return $http.post('/login', {
             username: username,
             password: password
         }).then(function(val) {
-            // svc.token = val.data;
-            window.localStorage.token = val.data;
-            $http.defaults.headers.common['x-auth'] = window.localStorage.token;
-            return svc.getUser();
+            return val.data;
         }, function(err) {
             return err;
         });
     };
     svc.logout = function() {
-        $http.defaults.headers.common['x-auth'] = undefined;
+        $http.get('/logout').then(function(){
+            console.log("Logged out!");
+        });
     }
 });

@@ -1,21 +1,22 @@
 angular.module('keepUp').controller('AppCtrl', function($scope, $http, LoginSvc, $location) {
 
-    if(window.localStorage.token) {
-        $http.defaults.headers.common['x-auth'] = window.localStorage.token;
+    if(window.localStorage.loggedIn) {
         LoginSvc.getUser()
             .then(function(response) {
                 $scope.currentUser = response.data;
             });
     }
 
+
     $scope.$on('login', function(_, user) {
+        window.localStorage.loggedIn = true;
         $location.path('/');
         $scope.currentUser = user;
     });
     
     $scope.logout = function() {
+        window.localStorage.removeItem('loggedIn');
         $scope.currentUser = null;
-        window.localStorage.removeItem('token');
         LoginSvc.logout();
     }
 });

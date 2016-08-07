@@ -5,7 +5,7 @@ angular.module('keepUp').controller('LoginCtrl', function($scope,LoginSvc) {
                 if(response.status === 401) {
                     $scope.loginError = response.statusText;
                 } else {
-                    $scope.$emit('login', response.data);
+                    $scope.$emit('login', response);
                 }
             });
     }
