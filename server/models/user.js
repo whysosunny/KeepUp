@@ -1,4 +1,5 @@
 var db = require('../../db.js');
+var bcrypt = require('bcrypt');
 
 var userSchema = db.Schema({
     firstName : {
@@ -22,5 +23,13 @@ var userSchema = db.Schema({
         ref: 'Event'
     }]
 });
+
+userSchema.methods.generateHash = function(password) {
+    bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+userSchema.methods.validPassword = function(password) {
+    bcrypt.compareSync(password, this.password);
+};
 
 module.exports = db.model('User',userSchema);
